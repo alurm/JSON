@@ -1,0 +1,14 @@
+{
+	"array": [
+		42,
+		69,
+		1337,
+		"end"
+	],
+	"object": {
+		"is": {"full": {"of": "keys"}}
+	},
+	"number": 123.456,
+	"boolean": true,
+	"string": "Hello!"
+}
