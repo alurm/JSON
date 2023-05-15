@@ -148,7 +148,7 @@ func main() {
 				}
 				return strings.NewReader(os.Args[1])
 			}
-			if !term.IsTerminal(int(os.Stdin.Fd())) {
+			if term.IsTerminal(int(os.Stdin.Fd())) {
 				die()
 			}
 			return os.Stdin
