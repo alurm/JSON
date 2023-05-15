@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -xe
+
+test "$(go fmt)" = ""
