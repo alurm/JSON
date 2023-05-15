@@ -130,6 +130,22 @@ func main() {
 		jsonReader := func() io.Reader {
 			// Prioritize command line arguments over standard input.
 			if len(os.Args) > 1 {
+				arg := string(os.Args[1])
+				if len(arg) > 0 &&
+					arg[0] == '-' &&
+					(len(arg) == 1 ||
+						(arg[1] != '0' &&
+							arg[1] != '1' &&
+							arg[1] != '2' &&
+							arg[1] != '3' &&
+							arg[1] != '4' &&
+							arg[1] != '5' &&
+							arg[1] != '6' &&
+							arg[1] != '7' &&
+							arg[1] != '8' &&
+							arg[1] != '9')) {
+					die()
+				}
 				return strings.NewReader(os.Args[1])
 			}
 			if !term.IsTerminal(int(os.Stdin.Fd())) {
